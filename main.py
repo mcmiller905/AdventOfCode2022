@@ -2,7 +2,7 @@
 # run the different day's code, or set to 0 to run all
 from importlib import import_module
 
-day = 1
+day = 2
 runPart1 = True
 runPart2 = True
 
