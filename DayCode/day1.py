@@ -15,7 +15,7 @@ def runPart1():
         else:
             elfTotal = elfTotal + int(currentLine)
         index+=1
-    print(biggestElf)
+    return(biggestElf)
 
 def runPart2():
     inputFile = open('InputFiles/day1Input.txt', 'r')
@@ -35,4 +35,4 @@ def runPart2():
         index+=1
     elfArray.sort(reverse=True)
     top3Total = elfArray[0] + elfArray[1] + elfArray[2]
-    print(top3Total)
+    return(top3Total)

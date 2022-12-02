@@ -47,7 +47,7 @@ def runPart1():
                 outcome = 3
                 hand = 3
         score += outcome + hand
-    print(score)
+    return(score)
 
 
 def runPart2():
@@ -99,4 +99,4 @@ def runPart2():
                 outcome = 6
                 hand = 1
         score += outcome + hand
-    print(score)
+    return(score)
