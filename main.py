@@ -4,7 +4,7 @@ from importlib import import_module
 import time
 import os
 
-day = 2
+day = 3
 runPart1 = True
 runPart2 = True
 
@@ -38,4 +38,5 @@ if(day == 0):
         i+=1
 else:
     runDay(day)
+print()
 

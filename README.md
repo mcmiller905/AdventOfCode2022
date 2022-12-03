@@ -1,4 +1,5 @@
 # AdventOfCode2022
+![](https://img.shields.io/badge/stars%20⭐-6-yellow)
 
 mcmiller905's repository for Advent of Code 2022 work. I'm still using Python, this is a good way to practice with it. I have a 'main.py' file, that serves as the main starting point for each day of code. There is a variable at the top of the file that determines which day's code should be run. Each day's code is stored in a DayCode directory, and the same is true for the input files in InputFiles.
 
