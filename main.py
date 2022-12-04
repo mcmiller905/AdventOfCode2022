@@ -1,12 +1,15 @@
 # Main runner of all the Advent of Code 2021 code. Change the 'day' variable to
 # run the different day's code, or set to 0 to run all
 from importlib import import_module
-import time
-import os
+import time, sys, os
 
-day = 3
-runPart1 = True
-runPart2 = True
+############################
+# DEFAULT CONTROL PANEL    #
+day = 0                    #
+runPart1 = True            #
+runPart2 = False           #
+#                          #
+############################
 
 def runDay(dayNum):
     print()
@@ -20,16 +23,21 @@ def runDay(dayNum):
         startTime = time.perf_counter()
         answer = part1()
         endTime = time.perf_counter()
-        print(f"Part 1: - {1000 * (endTime - startTime):0.4f}ms")
+        print(f"Part 1: - {1000 * (endTime - startTime):0.2f}ms")
         print(str(answer))
     if(runPart2):
         part2 = getattr(module, 'runPart2')
         startTime = time.perf_counter()
         answer = part2()
         endTime = time.perf_counter()
-        print(f"Part 2: - {1000 * (endTime - startTime):0.4f}ms")
+        print(f"Part 2: - {1000 * (endTime - startTime):0.2f}ms")
         print(str(answer))
 
+if(len(sys.argv) > 1):
+    day = int(sys.argv[1])
+if(len(sys.argv) > 2):
+    if(sys.argv[2].lower() == "true"):
+        runPart2 = True
 if(day == 0):
     numFiles = len(next(os.walk("DayCode"))[2]) + 1
     i = 1
