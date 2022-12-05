@@ -33,18 +33,34 @@ def runDay(dayNum):
         print(f"Part 2: - {1000 * (endTime - startTime):0.2f}ms")
         print(str(answer))
 
+def printHelp():
+    print()
+    print("Welcome to my Advent of Code 2022 program!")
+    print("To control what gets executed, there are variables at the top of the main.py")
+    print("or you could use the following command line args:")
+    print(" - first arg is the number of the day to run (0 to run all)")
+    print(" - second arg is whether or not you want to run part 2")
+    print(" - - false runs only part 1")
+    print(" - - true runs both part 1 and part 2")
+    print()
+
+run = True
 if(len(sys.argv) > 1):
-    day = int(sys.argv[1])
+    if(sys.argv[1] == "--help" or sys.argv[1] == "-h"):
+        printHelp()
+        run = False
+    else:
+        day = int(sys.argv[1])
 if(len(sys.argv) > 2):
     if(sys.argv[2].lower() == "true"):
         runPart2 = True
-if(day == 0):
-    numFiles = len(next(os.walk("DayCode"))[2]) + 1
-    i = 1
-    while(i < numFiles):
-        runDay(i)
-        i+=1
-else:
-    runDay(day)
+if(run):
+    if(day == 0):
+        numFiles = len(next(os.walk("DayCode"))[2]) + 1
+        i = 1
+        while(i < numFiles):
+            runDay(i)
+            i+=1
+    else:
+        runDay(day)
 print()
-
