@@ -50,7 +50,11 @@ if(len(sys.argv) > 1):
         printHelp()
         run = False
     else:
-        day = int(sys.argv[1])
+        try:
+            day = int(sys.argv[1])
+        except ValueError:
+            print("'" + sys.argv[1] + "' not acceptable. dayNum arg must be a number")
+            run = False
 if(len(sys.argv) > 2):
     if(sys.argv[2].lower() == "true"):
         runPart2 = True
