@@ -58,6 +58,8 @@ if(len(sys.argv) > 1):
 if(len(sys.argv) > 2):
     if(sys.argv[2].lower() == "true"):
         runPart2 = True
+    elif(sys.argv[2].lower() == "false"):
+        runPart2 = False
 if(run):
     if(day == 0):
         numFiles = len(next(os.walk("DayCode"))[2]) + 1
@@ -67,8 +69,12 @@ if(run):
             runDay(i)
             i+=1
         totalEndTime = time.perf_counter()
+        runTime = 1000 * (totalEndTime - totalStartTime)
+        runTimeText = f"{runTime:0.2f}ms"
+        if(runTime > 1000):
+            runTimeText = f"{(runTime/1000):0.2f}s"
         print()
-        print(f"Total time: - {1000 * (totalEndTime - totalStartTime):0.2f}ms")
+        print(f"Total time: - " + runTimeText)
     else:
         runDay(day)
 print()
