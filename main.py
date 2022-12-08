@@ -62,9 +62,13 @@ if(run):
     if(day == 0):
         numFiles = len(next(os.walk("DayCode"))[2]) + 1
         i = 1
+        totalStartTime = time.perf_counter()
         while(i < numFiles):
             runDay(i)
             i+=1
+        totalEndTime = time.perf_counter()
+        print()
+        print(f"Total time: - {1000 * (totalEndTime - totalStartTime):0.2f}ms")
     else:
         runDay(day)
 print()
