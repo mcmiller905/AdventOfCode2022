@@ -1,1 +1,1 @@
-Advent of Code doesn't want puzzle inputs to be published, so all my input files have been set to be ignored in .gitignore
+Advent of Code doesn't want puzzle inputs to be published, so all my input files have been set to be ignored in .gitignore. Let me know if you want to try these solutions out.
